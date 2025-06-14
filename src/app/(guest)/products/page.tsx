@@ -7,7 +7,7 @@ import { Metadata } from "next";
 const assets_url = `${process.env.ASSETS_URL}`;
 
 export async function generateMetadata(): Promise<Metadata> {
-  let title = "FAQs";
+  let title = "Products";
   let description = "LegAn: Connect with verified buyers and sellers for secure credit transactions. Trust our network for safe and reliable business interactions";
   let images = assets_url + "/images/Homepage/company_search.png";
   let category = "Financial";
