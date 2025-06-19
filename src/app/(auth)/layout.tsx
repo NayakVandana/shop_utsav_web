@@ -6,7 +6,7 @@ import Provider from '../Providers/ClientProvider'
 import { ToastContainer } from 'react-toastify'
 import authOptions from '../api/auth/[...nextauth]/authOptions'
 import Head from 'next/head'
-import Scripts from '@/components/Footer/Scripts'
+
 // import { CommonHead } from '@/components/Header/CommonHead'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -41,7 +41,7 @@ export default async function RootLayout({
         <ToastContainer />
       </body>
 
-      <Scripts/>
+   
     </html>
   )
 }
