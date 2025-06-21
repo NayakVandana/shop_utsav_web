@@ -27,14 +27,14 @@ export default function Login() {
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm  rounded">
                 {loginWith === 'password' ? <LoginWithPassword /> : <LoginWithOtp />}
 
-                <div className="divider py-5 ">OR</div>
+                {/* <div className="divider py-5 ">OR</div>
 
-                <FormButton onClick={() => SetLoginWith(loginWith === 'password' ? 'otp' : 'password')} className="btn btn-primary btn-block  btn-outline" title={loginWith === 'password' ? 'Login via OTP' : 'Login Via Password'} />
+                <FormButton onClick={() => SetLoginWith(loginWith === 'password' ? 'otp' : 'password')} className="btn btn-primary btn-block  btn-outline" title={loginWith === 'password' ? 'Login via OTP' : 'Login Via Password'} /> */}
 
 
 
                 <p className="mt-10 text-center text-sm text-gray-500">
-                    Don’t have account? <Link href="/register" className="link link-hover text-primary-400 ">Register Now</Link>
+                    Don’t have account? <Link href="/register" className="link link-hover text-blue-400 ">Register Now</Link>
                 </p>
             </div>
         </AuthContainer>

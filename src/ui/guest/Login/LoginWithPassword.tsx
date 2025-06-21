@@ -142,12 +142,12 @@ export const LoginWithPassword = () => {
 
       <Link
         href="/forgot-password"
-        className="link link-hover flex items-center text-primary-400 justify-end"
+        className="link link-hover flex items-center text-blue-400 justify-end"
       >
         Forgot Password?
       </Link>
 
-      <FormButton type="submit" className="btn btn-primary btn-block" title="Login" />
+      <FormButton type="submit" className="btn btn-blue btn-block" title="Login" />
     </form>
   );
 };
