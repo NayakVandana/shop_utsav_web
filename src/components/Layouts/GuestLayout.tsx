@@ -11,6 +11,7 @@ export default function GuestLayout({ children }: any) {
     {/* <TopHeader/> */}
         {/* <Header /> */}
         <div className="flex flex-col min-h-screen">
+            <h1>GuestLayout</h1>
             <main className="flex-grow ">
                 {children}
             </main>
