@@ -3,11 +3,15 @@ import { Inter } from 'next/font/google'
 import '../globals.css'
 import { getServerSession } from 'next-auth'
 import Provider from '../Providers/ClientProvider'
+import { isLoggedin } from '@/utils/isLoggedin'
 import { ToastContainer } from 'react-toastify'
+import { redirect } from 'next/navigation'
 import authOptions from '../api/auth/[...nextauth]/authOptions'
-import Head from 'next/head'
+import 'react-time-picker/dist/TimePicker.css';
+import 'react-clock/dist/Clock.css';
+import AdminLayout from '@/components/Layouts/AdminLayout'
 
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,26 +25,25 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const session = await getServerSession(authOptions)
 
+  let isLogin = await isLoggedin();
+  if (!isLogin) {
+    return redirect("/login");
+  }
+
+
+
+  const session = await getServerSession(authOptions)
   return (
     <html lang="en" data-theme="light">
-      {/* <CommonHead/> */}
-      <SpeedInsights/>
-      <Head>
-        <meta charset="utf-8" />
-        <meta name="robots" content="all" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
       <body className={inter.className}>
         <Provider session={session}>
-          {children}
+          <AdminLayout >
+            {children}
+          </AdminLayout>
         </Provider>
         <ToastContainer />
       </body>
-
-   
     </html>
   )
 }

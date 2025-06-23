@@ -1,5 +1,3 @@
-//C:\wamp64\www\shop_utsav_frontend\src\components\Layouts\AppLayout.tsx
-
 import dynamic from 'next/dynamic';
 import React, { Suspense, memo } from 'react';
 import TopHeader from '../Header/TopHeader';
@@ -18,10 +16,10 @@ const Modals = memo(() => (
 Modals.displayName = 'Modals';
 
 
-const AppLayout = memo(function AppLayout({ children }) {
+const UserLayout = memo(function UserLayout({ children }) {
   return (
      <>
-      <h1>AppLayout</h1>
+      <h1>UserLayout</h1>
       <TopHeader />
       <Header />
       <div className="flex flex-col min-h-screen">
@@ -33,4 +31,4 @@ const AppLayout = memo(function AppLayout({ children }) {
   );
 });
 
-export default AppLayout;
+export default UserLayout;

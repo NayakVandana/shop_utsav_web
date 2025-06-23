@@ -1,4 +1,3 @@
-import FAQs from "@/ui/guest/FAQs/FAQs";
 import Products from "@/ui/guest/Products/Products";
 import apiCall from "@/utils/apiCall";
 import { handleResponse } from "@/utils/common";
@@ -7,11 +6,11 @@ import { Metadata } from "next";
 const assets_url = `${process.env.ASSETS_URL}`;
 
 export async function generateMetadata(): Promise<Metadata> {
-  let title = "Products";
-  let description = "LegAn: Connect with verified buyers and sellers for secure credit transactions. Trust our network for safe and reliable business interactions";
-  let images = assets_url + "/images/Homepage/company_search.png";
-  let category = "Financial";
-  let keywords = "Secure credit transactions";
+const title = "Explore Products - Utsav";
+const description = "Buy Online at Best Price – Utsav";
+const category = "E-Commerce,Marketplace";;
+const keywords = "Buy Online at Best Price – Utsav";
+let images = assets_url + "/images/Homepage/company_search.png";
 
   return {
     metadataBase: new URL('http://localhost:3000'),
@@ -19,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     keywords,
     category,
-    applicationName: "LegAn",
+    applicationName: "Utsav",
     robots: process.env.NEXTAUTH_URL,
     manifest: process.env.NEXTAUTH_URL,
     openGraph: {
@@ -27,10 +26,10 @@ export async function generateMetadata(): Promise<Metadata> {
       url: process.env.NEXTAUTH_URL,
       description,
       images: images,
-      siteName: "LegAn",
+      siteName: "Utsav",
     },
     twitter: {
-      site: "LegAn",
+      site: "Utsav",
       title,
       description,
       images: images,

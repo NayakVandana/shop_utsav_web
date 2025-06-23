@@ -8,11 +8,11 @@ import { Metadata } from "next";
 const assets_url = `${process.env.ASSETS_URL}`;
 
 export async function generateMetadata(): Promise<Metadata> {
-  let title = "LegAn";
-  let description = "LegAn: Elevate financial control.Send bill, automate reminders, and track transactions seamlessly.Reliable credit management solution.";
+  let title = "Utsav";
+ const description = "Buy Online at Best Price – Utsav.";
 
-  let category = "Business";
-  let keywords = "Credit and debit management";
+  let category = "E-Commerce";
+  let keywords = "E-Commerce,Marketplace";
   let url = process.env.NEXTAUTH_URL;
   return {
     metadataBase: new URL(process.env.NEXTAUTH_URL),
@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     keywords,
     category,
-    applicationName: "LegAn",
+    applicationName: "Utsav",
     robots: url,
     manifest: url,
     alternates: {
@@ -31,10 +31,10 @@ export async function generateMetadata(): Promise<Metadata> {
       url: process.env.NEXTAUTH_URL,
       description,
    
-      siteName: "LegAn",
+      siteName: "Utsav",
     },
     twitter: {
-      site: "LegAn",
+      site: "Utsav",
       title,
       description,
      
@@ -44,12 +44,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 async function Home() {
-  // let isLogin = await isLoggedin();
-
-  // if (isLogin) {
-  //   redirect("/dashboard");
-  // }
-
   return (
     <>
       <GuestHomePage />

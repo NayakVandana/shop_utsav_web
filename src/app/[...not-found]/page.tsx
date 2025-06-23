@@ -1,8 +1,5 @@
-
-//C:\wamp64\www\shop_utsav_frontend\src\app\[...not-found]\page.tsx
-
 import AdminLayout from '@/components/Layouts/AdminLayout';
-import AppLayout from '@/components/Layouts/AppLayout';
+import UserLayout from '@/components/Layouts/UserLayout';
 import GuestLayout from '@/components/Layouts/GuestLayout';
 import { useAuthStore } from '@/ui/guest/Login/authStore';
 import { isLoggedin } from '@/utils/isLoggedin';
@@ -12,15 +9,8 @@ import { usePathname } from 'next/navigation';
 
 export default async function NotFound() {
     let isLogin = await isLoggedin();
-    let Contatiner = isLogin ? AppLayout : GuestLayout;
-    // const isAdminLoggedIn = useAuthStore((state: any) => state.isAdminLoggedIn);
-    // const { data: session, status }: any = useSession();
-    // const isAdmin = session?.user?.is_admin
+    let Contatiner = isLogin ? UserLayout : GuestLayout;
 
-
-
-    // const isAdminPath = isAdmin 
-    // check here admin is loged in or not 
     if (false) {
         Contatiner = AdminLayout
     }
