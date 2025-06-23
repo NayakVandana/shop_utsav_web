@@ -30,7 +30,7 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   const isLogin = await isLoggedin();
   const Container = isLogin ? AppLayout : GuestLayout;
-
+console.log("isLogin",isLogin);
   return (
     <html lang="en" data-theme="light">
       {/* <head>
