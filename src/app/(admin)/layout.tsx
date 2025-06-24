@@ -11,8 +11,6 @@ import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import AdminLayout from '@/components/Layouts/AdminLayout'
 
-
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -20,30 +18,18 @@ export const metadata: Metadata = {
   description: 'THE UTSAV',
 }
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default async function Layout({ children }: { children: React.ReactNode }) {
+  const isLogin = await isLoggedin();
+  if (!isLogin) return redirect("/login");
 
-  let isLogin = await isLoggedin();
-  if (!isLogin) {
-    return redirect("/login");
-  }
+  const session = await getServerSession(authOptions);
 
-
-
-  const session = await getServerSession(authOptions)
   return (
-    <html lang="en" data-theme="light">
-      <body className={inter.className}>
-        <Provider session={session}>
-          <AdminLayout >
-            {children}
-          </AdminLayout>
-        </Provider>
-        <ToastContainer />
-      </body>
-    </html>
-  )
+    <Provider session={session}>
+      <AdminLayout>
+        {children}
+      </AdminLayout>
+      <ToastContainer />
+    </Provider>
+  );
 }
