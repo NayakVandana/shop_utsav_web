@@ -1,28 +1,15 @@
-//C:\wamp64\www\shop_utsav_frontend\src\components\Layouts\GuestLayout.tsx
+import Header from '../Header/Header';
+import GuestFooter from '../Footer/GuestFooter';
 
-import Header from "../Header/Header";
-
-// import GuestFooter from "../Footer/GuestFooter";
-// import Header from "../Header/Header";
-// import TopHeader from "../Header/TopHeader";
-
-export default function GuestLayout({ children }: any) {
-    // const router = useRouter();
-    // const showHeader = router.pathname === '/login' ? false : true;
-    return <>
-    {/* <TopHeader/> */}
-        {/* <Header /> */}
-        <div className="flex flex-col min-h-screen">
-             <Header />
-            <h1>GuestLayout</h1>
-            <main className="flex-grow ">
-                {children}
-            </main>
-            {/* <GuestFooter /> */}
-        </div>
-        <div id="calendaly"></div>
+export default function GuestLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Header />
+      <div className="flex flex-col min-h-screen">
+        <main className="flex-grow bg-base-300">{children}</main>
+        <GuestFooter />
+      </div>
+      <div id="calendaly" className="fixed bottom-4 right-4"></div>
     </>
-
-
-
+  );
 }
